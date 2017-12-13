@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -31,7 +31,6 @@ Plugin 'haya14busa/incsearch.vim'
 Plugin 'jaxbot/browserlink.vim'
 Plugin 'shime/vim-livedown'
 
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -41,6 +40,7 @@ set t_Co=256
 set mouse=a
 set encoding=utf-8
 highlight LineNr ctermbg=8
+highlight BadWhitespace ctermbg=red guibg=red
 
 " AirLine settings
 let g:airline_theme='badwolf'
@@ -94,8 +94,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " *.py files 
-autocmd BufRead *.py set softtabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+autocmd BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix colorcolumn=120
 
 " *.js, *.html, *.css files
 autocmd BufNewFile,BufRead *.js,*.html,*.css set tabstop=2 softtabstop=2 shiftwidth=2
@@ -103,3 +102,6 @@ autocmd BufNewFile,BufRead *.js,*.html,*.css set tabstop=2 softtabstop=2 shiftwi
 " Mark BadWhiteSpace
 autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+au FileType qf setlocal nonumber colorcolumn=
+let g:pymode_options_max_line_length=120
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
