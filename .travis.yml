@@ -1,6 +1,0 @@
-services:
-- docker
-install:
-- docker build -t minimum_dotfiles 
-script:
-- docker ps | grep -q minimum_dotfiles
