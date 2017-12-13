@@ -1,6 +1,6 @@
 # minimum_dotfiles
 
-Version: v0.0.5
+Version: v0.0.6
 
 ## Authors
 
