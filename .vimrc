@@ -23,7 +23,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlp/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
@@ -102,6 +102,10 @@ autocmd BufNewFile,BufRead *.js,*.html,*.css set tabstop=2 softtabstop=2 shiftwi
 " Mark BadWhiteSpace
 autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-au FileType qf setlocal nonumber colorcolumn=
+" Prevent column highlight in Quickfix window
+autocmd FileType qf setlocal nonumber colorcolumn=
+
+" Move columns to 120 instead of default 80
 let g:pymode_options_max_line_length=120
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
+
