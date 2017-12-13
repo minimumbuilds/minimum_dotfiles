@@ -53,8 +53,8 @@ tab sball
 set switchbuf=useopen
 set laststatus=2
 nmap <F8> :TagbarToggle<CR>
-nmap <F9> :bprev<CR>
-nmap <F10> :bnext<CR>
+nmap <F2> :bprev<CR>
+nmap <F3> :bnext<CR>
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
 " incsearch.vim settings.
