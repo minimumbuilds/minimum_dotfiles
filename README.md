@@ -1,13 +1,13 @@
 # minimum_dotfiles
 
-Version: v0.0.0
+Version: v0.0.1
 
 ## Docker Image
 
-[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_dotfiles:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_dotfiles:v0.0.0 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_dotfiles:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_dotfiles:v0.0.0 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_dotfiles:v0.0.0.svg)](https://microbadger.com/images/minimumbuilds/minimum_dotfiles:v0.0.0 "Get your own commit badge on microbadger.com") 
+[![](https://images.microbadger.com/badges/version/minimumbuilds/minimum_dotfiles:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_dotfiles:v0.0.1 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/minimumbuilds/minimum_dotfiles:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_dotfiles:v0.0.1 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/minimumbuilds/minimum_dotfiles:v0.0.1.svg)](https://microbadger.com/images/minimumbuilds/minimum_dotfiles:v0.0.1 "Get your own commit badge on microbadger.com") 
 
 ## Build
-[![Build Status](https://travis-ci.org/minimumbuilds/minimum_dotfiles.svg?branch=v0.0.0)](https://travis-ci.org/minimumbuilds/minimum_dotfiles)
+[![Build Status](https://travis-ci.org/minimumbuilds/minimum_dotfiles.svg?branch=v0.0.1)](https://travis-ci.org/minimumbuilds/minimum_dotfiles)
 
 ## Pull
 	docker pull minimumbuilds/minimum_dotfiles
