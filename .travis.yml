@@ -1,6 +1,6 @@
 services:
 - docker
 install:
-- docker build -t minimum_template 
+- docker build -t minimum_dotfiles 
 script:
-- docker ps | grep -q minimum_template
+- docker ps | grep -q minimum_dotfiles
