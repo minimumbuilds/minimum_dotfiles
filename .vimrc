@@ -30,6 +30,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'jaxbot/browserlink.vim'
 Plugin 'shime/vim-livedown'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'zchee/deoplete-jedi'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -108,4 +111,30 @@ autocmd FileType qf setlocal nonumber colorcolumn=
 " Move columns to 120 instead of default 80
 let g:pymode_options_max_line_length=120
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
+
+" NERDcommentor settings
+" https://github.com/scrooloose/nerdcommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
