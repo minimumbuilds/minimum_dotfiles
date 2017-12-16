@@ -34,6 +34,8 @@ Plugin 'shime/vim-livedown'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-signify'
+Plugin 'zchee/deoplete-jedi'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
