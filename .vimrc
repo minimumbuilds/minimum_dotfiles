@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'python-mode/python-mode'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -23,16 +24,16 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlp/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'jaxbot/browserlink.vim'
+" Plugin 'jaxbot/browserlink.vim'
 Plugin 'shime/vim-livedown'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'zchee/deoplete-jedi'
+Plugin 'mhinz/vim-signify'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,6 +43,7 @@ set nu
 set t_Co=256
 set mouse=a
 set encoding=utf-8
+colo elflord
 highlight LineNr ctermbg=8
 highlight BadWhitespace ctermbg=red guibg=red
 
@@ -79,16 +81,29 @@ let NERDTreeShowHidden=1
 let python_highlight_all=1
 syntax on
 
-" autostart nerdtree
+" autostart NERDTree
 autocmd vimenter * NERDTree
 " autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" open NERDtree with <ctrl-n>
+" open NERDTree with <ctrl-n>
 map <C-n> :NERDTreeToggle<CR>
 
 " close nerdtree if all windows are closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 " autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -111,6 +126,7 @@ autocmd FileType qf setlocal nonumber colorcolumn=
 " Move columns to 120 instead of default 80
 let g:pymode_options_max_line_length=120
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
+
 
 " NERDcommentor settings
 " https://github.com/scrooloose/nerdcommenter
@@ -137,4 +153,3 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-
